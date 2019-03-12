@@ -12,13 +12,9 @@ public class MockClient {
         String url_nonBlockingThreadPoolAsync="http://slc11fsp.us.oracle.com:8080/servlet/nonBlockingThreadPoolAsync";
    for(int i=0;i<10;i++){
        new Thread(()->{
-           try {
-               System.out.println("Client Thread "+Thread.currentThread().getName()+" start");
-               HttpResponse response = HttpUtil.sendBrowserGet(url_nonBlockingThreadPoolAsync);
-               System.out.println(response.getContent());
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
+           System.out.println("Client Thread "+Thread.currentThread().getName()+" start");
+           HttpResponse response = HttpUtil.sendBrowserGet(url_nonBlockingThreadPoolAsync);
+           System.out.println(response.getContent());
        }).start();
    }
     }
