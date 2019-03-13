@@ -675,7 +675,7 @@ public class Http11Processor extends AbstractProcessor {
         readComplete = true;
         boolean keptAlive = false;
         SendfileState sendfileState = SendfileState.DONE;
-
+       log.info("[d] Parsing the request header");
         while (!getErrorState().isError() && keepAlive && !isAsync() && upgradeToken == null &&
                 sendfileState == SendfileState.DONE && !endpoint.isPaused()) {
 

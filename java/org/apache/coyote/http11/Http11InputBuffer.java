@@ -398,10 +398,10 @@ public class Http11InputBuffer implements InputBuffer, ApplicationBufferHandler 
 
             parsingRequestLineStart = byteBuffer.position();
             parsingRequestLinePhase = 2;
-            if (log.isDebugEnabled()) {
-                log.debug("Received ["
+//            if (log.isDebugEnabled()) {
+                log.info("[d] Received ["
                         + new String(byteBuffer.array(), byteBuffer.position(), byteBuffer.remaining(), StandardCharsets.ISO_8859_1) + "]");
-            }
+//            }
         }
         if (parsingRequestLinePhase == 2) {
             //

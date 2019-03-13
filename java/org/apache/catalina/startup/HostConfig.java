@@ -1070,7 +1070,7 @@ public class HostConfig implements LifecycleListener {
      * @param dir The path to the root folder of the weapp
      */
     protected void deployDirectory(ContextName cn, File dir) {
-        log.info("deployDirectory"+cn.getName());
+        log.info("[d]deployDirectory "+cn.getName());
 
         long startTime = 0;
         // Deploy the application in this directory

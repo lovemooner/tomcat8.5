@@ -134,7 +134,7 @@ public class InputBuffer extends Reader
     /**
      * Buffer size.
      */
-    private final int size;
+    protected final int size;
 
 
     // ----------------------------------------------------------- Constructors

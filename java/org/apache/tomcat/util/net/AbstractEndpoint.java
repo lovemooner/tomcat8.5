@@ -861,7 +861,7 @@ public abstract class AbstractEndpoint<S> {
 
 
     public void createExecutor() {
-        log.info("createExecutor maxThreads="+getMaxThreads());
+        log.info("[d] createExecutor maxThreads="+getMaxThreads());
         internalExecutor = true;
         TaskQueue taskqueue = new TaskQueue();
         TaskThreadFactory tf = new TaskThreadFactory(getName() + "-exec-", daemon, getThreadPriority());

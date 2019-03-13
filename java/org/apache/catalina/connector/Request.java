@@ -1237,6 +1237,10 @@ public class Request implements org.apache.catalina.servlet4preview.http.HttpSer
         if (reader == null) {
             reader = new CoyoteReader(inputBuffer);
         }
+//        int len=inputBuffer.size;
+//        char[] cbuf=new char[len];
+//        inputBuffer.read(cbuf, 0, len);
+//        System.out.println(new String(cbuf));
         return reader;
 
     }
