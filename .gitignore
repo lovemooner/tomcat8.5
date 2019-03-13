@@ -1,0 +1,9 @@
+
+/.idea/*
+/*.log
+/logs
+/webapps
+/target
+/*.iml
+/work
+
