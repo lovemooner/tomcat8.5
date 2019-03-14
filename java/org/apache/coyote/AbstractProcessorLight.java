@@ -22,8 +22,10 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.apache.tomcat.util.net.AbstractEndpoint.Handler.SocketState;
 import org.apache.tomcat.util.net.DispatchType;
+import org.apache.tomcat.util.net.NioEndpoint;
 import org.apache.tomcat.util.net.SocketEvent;
 import org.apache.tomcat.util.net.SocketWrapperBase;
 
@@ -33,7 +35,7 @@ import org.apache.tomcat.util.net.SocketWrapperBase;
  * processors to the HTTP/AJP processors.
  */
 public abstract class AbstractProcessorLight implements Processor {
-
+    private static final Log log = LogFactory.getLog(AbstractProcessorLight.class);
     private Set<DispatchType> dispatches = new CopyOnWriteArraySet<>();
 
 
@@ -63,6 +65,7 @@ public abstract class AbstractProcessorLight implements Processor {
                 // Extra write event likely after async, ignore
                 state = SocketState.LONG;
             } else if (status == SocketEvent.OPEN_READ){
+                log.info("[d] process SocketEvent.OPEN_READ");
                 state = service(socketWrapper);
             } else {
                 // Default to closing the socket if the SocketEvent passed in

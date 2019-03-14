@@ -1049,7 +1049,7 @@ public abstract class AbstractEndpoint<S> {
             }
             Executor executor = getExecutor();
             if (dispatch && executor != null) {
-                log.info("ThreadPool submit thread for "+sc.getSocketWrapper().getRemoteAddr());
+                log.info("[d] ThreadPool submit thread for "+sc.getSocketWrapper().getRemoteAddr());
                 executor.execute(sc);
             } else {
                 sc.run();

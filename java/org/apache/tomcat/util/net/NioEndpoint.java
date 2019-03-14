@@ -480,7 +480,7 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel> {
                         // Accept the next incoming connection from the server
                         // socket
                         socket = serverSock.accept();
-                        log.info("serverSock accept socket ");
+                        log.info("[d] serverSock accept socket ");
                     } catch (IOException ioe) {
                         // We didn't get a socket
                         countDownConnection();
@@ -729,6 +729,7 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel> {
          * @param socket    The newly created socket
          */
         public void register(final NioChannel socket) {
+            log.info("[d] register socket to poller");
             socket.setPoller(this);
             NioSocketWrapper ka = new NioSocketWrapper(socket, NioEndpoint.this);
             socket.setSocketWrapper(ka);
@@ -870,7 +871,6 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel> {
         }
 
         protected void processKey(SelectionKey sk, NioSocketWrapper attachment) {
-            log.info("processKey");
             try {
                 if ( close ) {
                     cancelledKey(sk);
@@ -1459,7 +1459,7 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel> {
         protected void doRun() {
             NioChannel socket = socketWrapper.getSocket();
             SelectionKey key = socket.getIOChannel().keyFor(socket.getPoller().getSelector());
-           log.info("handshake");
+           log.info("[d] work thread doRun threadId={}"+Thread.currentThread().getName());
             try {
                 int handshake = -1;
 

@@ -67,7 +67,7 @@
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
     <Connector port="8080" protocol="HTTP/1.1" acceptCount="10"
-               keepAliveTimeout="22000" maxThreads="10" maxConnections="1000" minSpareThreads="2"
+               keepAliveTimeout="220000" maxThreads="10" maxConnections="1000" minSpareThreads="2"
                redirectPort="8443" />
     <!-- A "Connector" using the shared thread pool-->
     <!--
