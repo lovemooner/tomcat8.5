@@ -1,0 +1,36 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!--
+  <filter>
+    <filter-name>securityFilter</filter-name>
+    <filter-class>love.moon.filter.SecurityFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>securityFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+   -->
+  <servlet>
+    <servlet-name>AsyncIOServlet101</servlet-name>
+    <servlet-class>love.moon.servlet.v3.AsyncIOServlet101</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AsyncIOServlet101</servlet-name>
+    <url-pattern>/async</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>love.moon.servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
